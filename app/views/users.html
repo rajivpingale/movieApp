@@ -1,0 +1,11 @@
+<div>
+    <form novalidate name="userForm">
+        <b><span>Selected User : {{selectedUser  | showFullName}}</span></b>
+        <input type="number" ng-model="selectedUser.age" name="userAge" />
+        <div style="color:red" ng-if="userForm.userAge.$error.age">Age Should be greater than 18</div>
+    </form>
+</div>
+
+<ul>
+    <li ng-repeat="user in users" user-item data-user="user" ng-click="selectUser(user)"></li>
+</ul>
